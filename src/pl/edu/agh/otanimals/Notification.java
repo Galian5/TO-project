@@ -16,6 +16,19 @@ class Notification {
     return new Builder();
   }
 
+  InstitutionType getInstitutionType() {
+    return institutionType;
+  }
+
+  @Override
+  public String toString() {
+    return "Notification{" +
+        "subject='" + subject + '\'' +
+        ", body='" + body + '\'' +
+        ", institutionType=" + institutionType +
+        '}';
+  }
+
   static class Builder {
 
     private String subject = "";
@@ -43,18 +56,5 @@ class Notification {
     Notification build() {
       return new Notification(this);
     }
-  }
-
-  InstitutionType getInstitutionType() {
-    return institutionType;
-  }
-
-  @Override
-  public String toString() {
-    return "Notification{" +
-        "subject='" + subject + '\'' +
-        ", body='" + body + '\'' +
-        ", institutionType=" + institutionType +
-        '}';
   }
 }

@@ -4,16 +4,16 @@ import java.util.Objects;
 
 interface Institution {
 
+  static Institution newInstitution(String name) {
+    return new InstitutionImpl(name);
+  }
+
   default InstitutionType getInstitutionType() {
     return InstitutionType.NONE;
   }
 
   default void pullNotification(Notification notification) {
     System.out.println("Received a notification: " + notification);
-  }
-
-  static Institution newInstitution(String name) {
-    return new InstitutionImpl(name);
   }
 
   class InstitutionImpl implements Institution {
